@@ -35,13 +35,13 @@ class PlantUtilityTests {
 
 	@Test
 	void testSplitByBedByColorResultingSize() {
-		Map<PlantColor, SimpleList<Flower>> split = PlantUtility.splitBedByColor(flowerBed);
-		assertEquals(4, split.keySet().size());
+		Map<PlantColor, SimpleList<? extends Flower>> split = PlantUtility.splitBedByColor(flowerBed);
+		assertEquals(5, split.keySet().size());
 	}
 
 	@Test
 	void testSplitByBedByColorPureness() {
-		Map<PlantColor, SimpleList<Flower>> split = PlantUtility.splitBedByColor(flowerBed);
+		Map<PlantColor, SimpleList<? extends Flower>> split = PlantUtility.splitBedByColor(flowerBed);
 		for (Flower f : split.get(PlantColor.YELLOW)) {
 			assertEquals(PlantColor.YELLOW, f.getColor());
 		}
@@ -49,7 +49,7 @@ class PlantUtilityTests {
 
 	@Test
 	void testSplitByBedByColorPureness2() {
-		Map<PlantColor, SimpleList<? extends Flower>> split = PlantUtility.splitBedByColor2(flowerBed);
+		Map<PlantColor, SimpleList<? extends Flower>> split = PlantUtility.splitBedByColor(flowerBed);
 		for (Flower f : split.get(PlantColor.YELLOW)) {
 			assertEquals(PlantColor.YELLOW, f.getColor());
 		}

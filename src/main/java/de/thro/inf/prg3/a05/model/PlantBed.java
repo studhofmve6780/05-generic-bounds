@@ -24,7 +24,8 @@ public class PlantBed<T extends Plant> {
 	}
 
 	public SimpleList<T> getPlantsByColor(PlantColor color){
-		return plants.filter(p -> p.getColor().equals(color));
+		// since its enum use ==
+		return plants.filter(p -> p.getColor() == color);
 	}
 
 	public SimpleList<T> getPlants() {
