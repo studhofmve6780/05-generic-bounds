@@ -28,8 +28,4 @@ public class PlantBed<T extends Plant> {
 		return plants.filter(p -> p.getColor() == color);
 	}
 
-	public SimpleList<T> getPlants() {
-		//hack to get a copy of the current list
-		return plants.map(p -> p);
-	}
 }
